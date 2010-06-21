@@ -1,0 +1,113 @@
+# This is a sample Vroom input file. It should help you get started.
+#
+# Edit this file with your content. Then run `vroom --vroom` to start
+# the show!
+#
+# See `perldoc Vroom` for complete details.
+#
+---- config
+# Basic config options.
+title: C'Dent, the Acmeism and Everyone
+indent: 5
+height: 18
+width: 69
+skip: 0
+
+# The following options are for Gvim usage.
+vim: gvim
+gvimrc: |
+  set fuopt=maxhorz,maxvert
+  set guioptions=egmLtT
+  set guifont=Bitstream_Vera_Sans_Mono:h18
+  set guicursor=a:blinkon0-ver25-Cursor
+  colorscheme default
+
+---- cdphp
+/* What's wrong with this code? */
+class Example {
+    function choose($word, $this, $that) {
+        if ($word eq 'this')
+            return $this;
+        else
+            return $that;
+    }
+}
+---- cdphp
+<?php
+/* What's wrong with this code? */
+class Example {
+    function choose($word, $this, $that) {
+        if ($word eq 'this')
+            return $this;
+        else
+            return $that;
+    }
+}
+?>
+---- cdpy
+# What's wrong with this code?
+class Example():
+    def choose(self, word, this, that):
+        if word == 'this':
+            return this
+        else:
+            return that
+---- cdpm
+# What's wrong with this code?
+package Example;
+use Moose;
+
+sub choose {
+    my ($self, $word, $this, $that) = @_;
+    if ($word eq 'this') {
+        return $this;
+    }
+    else {
+        return $that;
+    }
+}
+
+1;
+---- center
+C'Dent, the Acmeism and Everyone
+
+by Ingy döt Net
+
+YAPC North America - 22 June 2010 - Columbus, Ohio
+----
+00:30 <@cxreg> speaking of weird language interactions
++00:30 <@cxreg> i saw ingy's talk on C'Dent last night
++00:30 <@cxreg> he's a strange dude
++00:30 < erikh> ... yeah?
++00:30 < erikh> he's always been strange.
++00:30 <@cxreg> :)
++00:31 <@cxreg> it seems to be all about least-common-denominator code that can be broken down and used to produce the same code in 15 different languages
++00:31 <@cxreg> which i'm not sure how i feel about
++00:32 <@cxreg> on one hand, it's certainly portable, but it probably precludes a whole lot of idiomatic coding
+----
+00:32 <@cxreg> and efficiency
++00:32 < purl> If I wanted efficiency, I'd put bigger tires on the truck, so as to get the whole dog in one pass.
++00:32 <+sheriff> cxreg: On the plus side
++00:32 <+sheriff> cxreg: He will probably have lost interest in it in a few months
++00:32 <@cxreg> LOL
++00:32 <+sheriff> cxreg: Having pimped it extensively
++00:32 <+sheriff> cxreg: And made sure the docs are incomprehensible
++00:32 <@cxreg> he's writing a cross-language documentation and testing framework too
++00:33 <@cxreg> make that 2 frameworks, one for each
+----
+00:33 <+sheriff> cxreg: In three years time, he'll release an undocumented and non-backwards-compatible new version to CPAN
++00:33 <+sheriff> cxreg: And cease to support either version
++00:33 <+sheriff> And here ends The Book of Ingerson
++00:33 <@cxreg> haha
++00:34 <+sheriff> (now known as the book of "döt Net")
++00:34 < erikh> I think he's targetting testing?
++00:34 <@cxreg> yeah, TestML i think
++00:34 <@cxreg> and the docs thing is "stardoc"
++00:34 < erikh> makes sense re: LCD
++00:35 <+sheriff> The man is a genius, but there's no way I could be induced to employ him ever
++00:35 <@cxreg> like damian?
+----
+== Any Questions?
+
+----
+== The End
