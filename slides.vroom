@@ -9,7 +9,7 @@
 # Basic config options.
 title: C'Dent, the Acmeism and Everyone
 indent: 5
-height: 18
+height: 24
 width: 69
 skip: 0
 
@@ -133,12 +133,19 @@ YAPC North America - 22 June 2010 - Columbus, Ohio
 ----
 == Let me Explain Something to you about The Dude...
 
-+* http://free.ingy.net
-
 +<ingy> sheriff: You are a nice guy.
 +<ingy> But there's no way I could be induced to work for you.
 +<ingy> Ever!!!
 +<ingy> (Like Damian :-)
+----
+== http://free.ingy.net
+
+* DataBuilt
+* Kwiki
+* Socialtext
+* O'Reilly Book
+* Tor
+* Acmeism
 ----
 == Ingy döt Net
 
@@ -243,7 +250,7 @@ The first rule of Acmeism is:
 ----
 == The 10 Rules of Acmeism
 
-+6) Modules are the key to good programming
+6) Modules are the key to good programming
 
 +7) Modules are the sweetspot of interlanguage collaboration
 
@@ -432,10 +439,13 @@ I want to make Miyagawa-san an Acmeist!
 == Why JSYNC will be Great!!!
 
 1. JSYNC is JSON.
-   * It starts with an enormous, stable code base for parsing and emitting.
+   * It starts with an enormous, stable code base for
+     parsing and emitting.
 2. JSYNC adds YAML (the good parts).
-   * It takes well defined typing and reference syntax, verbatim from the YAML spec.
-3. JSYNC becomes a minimal, yet complete, data serialization language.
+   * It takes well defined typing and reference syntax,
+     verbatim from the YAML spec.
+3. JSYNC becomes a minimal, yet complete, data
+   serialization language.
    * Q.E.D.
 ----
 == Simple Typed Mapping
@@ -493,6 +503,8 @@ YAML:
 * http://github.com/ingydotnet/jsync-pm/
 
         >>> Demo JSYNC.pm <<<
+
+    > perl -MJSYNC -e 'print JSYNC::dump(*stdin, {pretty => 1})'
 ----
 == Writing JSYNC in 20 Languages
 
@@ -531,7 +543,7 @@ YAML:
 ----
 == C'Dent Demo
 
-> cat tests/modules/world.cd.py | cdent --compile --from=cd.py --to=js | cdent --compile --from=cd.js --to=pm6 | cdent --compile --from=cd.pm6 --to=pir | cdent --compile --from=cd.pir --to=cd.yaml | cdent --compile --from=cd.yaml --to=py | diff - tests/modules/world.cd.py
+> cat tests/modules/world.cd.py | cdent --compile --from=cd.py --to=js | cdent --compile --from=cd.js --to=pm6 | cdent --compile --from=cd.pm6 --to=pir | cdent --compile --from=cd.pir --to=cd.yaml | cdent --compile --from=cd.yaml --to=py | diff tests/modules/world.cd.py -
 
 ----
 == C'Dent Syntaxen
@@ -576,7 +588,12 @@ C'Dent lets you compile modules to:
 
 +I used OO modules!!
 
+----
+These are scripts/programs that use modules:
+
 ---- include hello-world
+----
+These are the modules they use:
 
 ---- include world-modules
 
@@ -629,8 +646,11 @@ has:
 * ... and you are DONE!!
 
 +* C'Dent doesn't define a syntax...
-+* It defines 4!!
-+* Python, Ruby, Perl and Javacript
+* It reuses many syntaxes
+* Python, Ruby, Perl, Javacript, etc..
+
+* C'Dent defines a Model
+* An AST Abstract Syntax/Structure Tree
 
 ----
 == C'Dent is Alive
@@ -638,17 +658,15 @@ has:
 * C'Dent is a compiler.
 * Get it here: http://pypi.python.org/pypi/cdent/
 
-    pip install cdent
+    pip install cdent  # needs pip
 
 or:
 
-    easy_install cdent
+    easy_install cdent  # needs setuptools
 
 or
 
     git clone git://github.com/ingydotnet/cdent.git
-
-+       >>> Show C'Dent compiler in action <<<
 
 ----
 == Who is C'Dent?
@@ -901,13 +919,9 @@ end
 * It would be great if they passed the same tests
 
 ----
-== Hackathon & TestML
+== Add TestML to JSYNC
 
-* I want to hack on TestML tomorrow!
-* HELP ME!
-
-* TestML tests for C'Dent
-* TestML in your language
+    >>> Live Hacking Demo <<<
 
 ----
 == Stardoc
@@ -937,9 +951,9 @@ end
 * HTML
 
 ----
-== YAPC::NA
+== Acmeism BOF
 
-* YAPC is Next Week!
+* After this talk
 
 * Let's Hack!
 ----
