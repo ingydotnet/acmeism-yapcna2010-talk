@@ -26,7 +26,7 @@ gvimrc: |
 /* What's wrong with this code? */
 class Example {
     function choose($word, $this, $that) {
-        if ($word eq 'this')
+        if ($word == 'this')
             return $this;
         else
             return $that;
@@ -37,7 +37,7 @@ class Example {
 /* What's wrong with this code? */
 class Example {
     function choose($word, $this, $that) {
-        if ($word eq 'this')
+        if ($word == 'this')
             return $this;
         else
             return $that;
@@ -68,12 +68,34 @@ sub choose {
 }
 
 1;
+---- cdpm
+# What's wrong with this code?
+package Example;
+use Moose;
+
+sub choose {
+    my ($self, $word, $this, $that) = @_;
+    if ($word eq 'this') {
+        return $this;
+    }
+    else {
+        return $that;
+    }
+}
+
+sub name {
+    my ($self) = @_;
+    print choose('that', 42, 24);
+}
+
+1;
 ---- center
 C'Dent, the Acmeism and Everyone
 
 by Ingy döt Net
 
 YAPC North America - 22 June 2010 - Columbus, Ohio
+
 ----
 00:30 <@cxreg> speaking of weird language interactions
 +00:30 <@cxreg> i saw ingy's talk on C'Dent last night
@@ -108,6 +130,837 @@ YAPC North America - 22 June 2010 - Columbus, Ohio
 +00:35 <@cxreg> like damian?
 ----
 == Any Questions?
+----
+== Let me Explain Something to you about The Dude...
+
++* http://free.ingy.net
+
++<ingy> sheriff: You are a nice guy.
++<ingy> But there's no way I could be induced to work for you.
++<ingy> Ever!!!
++<ingy> (Like Damian :-)
+----
+== Ingy döt Net
+
+* 100+ Repos on GitHub
+* 100+ Perl modules on CPAN
+* Several JavaScript modules on JSAN
+* Several Python modules on PyPi
+* No Ruby modules...
++  ...YET!!!
 
 ----
+== Ingy's PYRL
+
+* PYRL?
++* Projects You'll Really Like!!
+
+>>> http://ingy.pyrl.org <<<
+----
+== What is your Ingy döt Number?
+
+* Paul Erdős is my latest Hero
++* He has an umlaut tőö!
++* Erdős invented Pair Programming
+
++* The SF
+* The Book
+
++* Ingy loves to pair...
+
+== LOWER your Ingy Number!   PLEASE!!!
+
+----
+== Ingy the Porter
+
+I have ported a lot of code:
+
+* Perl to JavaScript   (Jemplate)
+* JavaScript to Perl   (pQuery)
+* Python to Perl       (PyYaml)
+* Perl to Python       (TestML)
+
+Between several languages...
+
+----
+== Ingy the Porter
+
+Guess what I found out???
+
++THEY ARE ALL THE SAME!!!
+
+    Perl == Python == JavaScript == Ruby
+
+* Line for line. Idiom for idiom.
+* They tell computers what to do.
+* OO languages all have a common set of basic components.
+
++* You don't believe me??
+
+      Viddy well my droogs...
+
+---- include yaml-examples
+
+----
+== Acmeism - HOPE for the Hacker Community
+
+* In this talk, Ingy will:
+
+  * Introduce Acmeism
+  * Show Some Acmeist Projects
+    * JSYNC
+    * C'Dent
+    * TestML
+    * Stardoc
+  * Create an Acmeist Hacker Army!!
+
++* What is HOPE??
+
++          Hack Once, Please Everyone!
+
+----
+== The 10 Rules of Acmeism
+
+The first rule of Acmeism is:
+
++1) YOU DON'T TALK ABOUT ACMEISM!
+
++Just kidding :)
+
+----
+== The 10 Rules of Acmeism
+
+1) All programming languages are the same
+
++2) Programming languages never die
+
++3) Programming languages divide programmers
+
++4) Programmer communities don't need to be divided
+
++5) A language's greatest asset is its community
+
+----
+== The 10 Rules of Acmeism
+
++6) Modules are the key to good programming
+
++7) Modules are the sweetspot of interlanguage collaboration
+
++8) Modules need to be shared (ported) across languages
+
++9) ... under construction ...
+10)
+----
+== Acmeism & the Tower of Babel
+
+* Acme means (literally) summit, zenith, highest point
+* Tower of Babel divided people by language
+
+* People speak different languages
+* 中文 or 日本語 or English. Which is better?
++* Who cares?
+
+* Programmers speak different languages
+* Python or Ruby or Perl. Which is best?
++* It doesn't matter.
+
+    IDEAS MATTER
+    ------------
+
 == The End
+
+----
+== What Acmeism is (and isn't) About
+
+* Acmeism is about People getting together
+    regardless of their language
+* Acmeism is *not* about converting people to your language
+* Acmeism is about sharing great ideas
+* Acmeism is *not* about stealing great ideas...
++  * Unless you give them back!
+
+I want to make Miyagawa-san an Acmeist!
+
+----
+== Acmeism and Snow Crash
+
+* chaos95 said "Acmeists need to read Snow Crash!"
+
+* Diversity is good
+* Diversity protects us from viral destruction
+  * MS Windows
+
+* Love your Programming Language...
+
+* But also love your (OSDC) neighbors
+
+----
+== What means "Acmeism"?
+
+* Acmeism is a word I made up
+* To describe the theme to my programming ideas
+
+* It's a defunct Russian Poetry Movement
+  * 1910-1912 in St Petersburg
+* It's a nod to "the best" Perl modules
+  * like Acme::Bleach
+  * and Acme::Scurvy::Whoreson::BilgeRat::Backend::pirate
+
+* YAML @ OSCON 2009 - Idea
+* Paris OSDC 2009 - Vapor
+* OSDC Taiwan 2010 - Alive
+
+----
+== OSDC - The Acmeist Conference
+
+* Perl
+* Ruby
+* JavaScript
+* Python
+* PHP
+* Java
+
+== OSCON - The (slightly more expensive) Acmeist Conference ;)
+
+----
+== Modules - 包子 for Programmers
+
+* Modules are ICs for Software
++  * IC == Integrated Circuits
+  * IC == Idea Containers
+
+* Modern Programming == Using Good Modules
+
+* Modules keep things DRY
+
+* Modules are the Crossroads of Programming Languages
+
+----
+== Acmeist Modules are Portable
+
+* Modules don't need to be fancy under the hood
+* Useful and _portable_ modules can be baked w/ staples:
+
+  * Modules, Classes & Methods
+  * Loops & Conditionals
+  * Variables & Assignments
+  * Builtin Functions & Standard Library
+  * Module Inclusion & Exceptional Handling
+  * Inheritance and Identity
+
+  * Regular Expressions?
+
+----
+== Ingy's Modules
+
+* So you want to see my Modules, eh??!! ;)
+
++* Publishing your own Ideas take's guts.
+* But once you start, it gets easier and easier.
+
++* Inline.pm was my first module
++* Write Perl subs in C
++* And ~42 other languages
++* It was a tough act to follow
+
++* I have a new goal. (to reach enlightenment)
++* Release a new module every day!
++* In 6 impossible languages!!
++* Before breakfast!!!
+
+----
+== The Ingy Module Challenge
+
+* If you never published a module...
++  * Publish a module this year!
+
++* If you have never published in another language...
++  * Publish a module in a new language this year!
+
++* If you've never published a module
+  in six impossible languages...
+  every day...
+  before breakfast...
++  * Watch the rest of this talk!!!
+
+----
+== Scripts as Modules?
+
+* To become a module junky...
+* You need to start thinking in abstractions
+* Think of everything as a reusable module
+
+* Every script I write I make into a module
+
+* Modules (classes) can be subclassed. Scripts can't.
+
+  >>> Show vroom-pm <<<
+
+----
+== My Module Goal for 2010
+
+* I want to write a useful OO module
+* With tests
+* With docs
+* Ported to 10 - 20 languages
+* Uploaded to their CPAN
+----
+== Introducing JSYNC
+
+* JSYNC is a new and complete Data Serialization Language
+* It takes the best of JSON
+* Adds the best of YAML
+* Creates a solid alternative to Both
+----
+== Why JSON is Great!
+
+1. JSON is a very simple subset of JavaScript data syntax.
+2. JSON is very easy to implement.
+3. There are existing JSON implementations in nearly every
+   programming language in use today.
+----
+== Why YAML is Great!
+
+1. YAML uses the same data model as JSON.
+2. YAML adds three things that are not present in JSON:
+   * Node Types
+   * Node Addresses and References
+   * Complex Mapping Keys
+3. With these additions, YAML can serialize any data graph.
+----
+== Why JSYNC will be Great!!!
+
+1. JSYNC is JSON.
+   * It starts with an enormous, stable code base for parsing and emitting.
+2. JSYNC adds YAML (the good parts).
+   * It takes well defined typing and reference syntax, verbatim from the YAML spec.
+3. JSYNC becomes a minimal, yet complete, data serialization language.
+   * Q.E.D.
+----
+== Simple Typed Mapping
+
+This would be loaded into a given programming language environment as an instance object of a Soldier class:
+    {
+        "!": "Soldier",
+        "name": "Benjamin",
+        "rank": "Private",
+        "serial number": 123456789
+    }
+
+Equivalent YAML:
+    --- !Soldier
+    name: Benjamin
+    rank: Private
+    serial number: 123456789
+----
+== A Reference
+
+He and she share the same car:
+    {
+        "His car": {
+            "&": "001",
+            "make": "Volvo",
+            "vin": "918273645"
+        },
+        "Her car": "*001"
+    }
+
+YAML:
+    ---
+    His car: &001
+      make: Volvo
+      vin: 918273645
+    Her car: *001
+----
+== A Recursive Data Structure
+
+Looking into a mirror infinitely:
+    {
+        "&": "Mirror",
+        "look": "*Mirror"
+    }
+
+YAML:
+    --- &Mirror
+    look: *Mirror
+----
+== JSYNC is Alive
+
+* http://www.jsync.org/
+* http://www.jsync.org/spec/
+* http://search.cpan.org/dist/JSYNC/
+* http://github.com/ingydotnet/jsync-pm/
+
+        >>> Demo JSYNC.pm <<<
+----
+== Writing JSYNC in 20 Languages
+
+* I need to learn 20 Languages
+* And their cultures
+* But maybe I can write the actual JSYNC code once...
+* In Perl...
+* And compile it to everywhere else!!!
+
+* In my dreams?
+
++* Introducing my dreams...
+----
+== Introducing C'Dent
+
+* I am working on a new Programming Language
+                        --------------------
+* It is called "C'Dent"
+
++* The World has too many programming languages already??!!
++* YES, EXACTLY!
+
++* This is why I started C'Dent!!
+
+----
+== What is C'Dent?
+
+* C'Dent is a "Portable Module Language"
+
+* NO NEW SYNTAX!
+* NO NEW RUNTIME!
+* One common Object Oriented Model
+
+* Write Once, Upload Everywhere
+* Hack Once, Please Everyone!
+----
+== C'Dent Demo
+
+> cat tests/modules/world.cd.py | cdent --compile --from=cd.py --to=js | cdent --compile --from=cd.js --to=pm6 | cdent --compile --from=cd.pm6 --to=pir | cdent --compile --from=cd.pir --to=cd.yaml | cdent --compile --from=cd.yaml --to=py | diff - tests/modules/world.cd.py
+
+----
+== C'Dent Syntaxen
+
+C'Dent lets you write modules in:
+
+* Perl
+* Python
+* Ruby
+* JavaScript
+
++Very strict subsets of these...
+
+----
+== C'Dent Runtimes
+
+C'Dent lets you compile modules to:
+
+* Perl
+* Python
+* Ruby
+* JavaScript
+
++* PHP
+* Java
+* Scala
+* Python 3
+* Perl 6
+* ActionScript
+* Go
+* PIR
+* NQP
+
++* and C'Dent!
+
+----
+== Object Oriented Hello, world
+
+* On a flight from NY to Seattle, March 3rd 2010
+* I wrote hello_world in 9 languages
+* But with a small twist...
+
++I used OO modules!!
+
+---- include hello-world
+
+---- include world-modules
+
+----
+== How C'Dent works (Step 1)
+
+* C'Dent defines a common abstract structure tree
+* From this structure you can emit equivalent modules
+  * In many many languages
+* The world module tree can be viewed in yaml.
+---- python
+# world.cd.py
+"""\
+This is World class :)
+"""
+
+class World():
+    def greet(self):
+        print "Hello, world"
+---- yaml
+# world.cd.yaml
+%TAG ! tag:cdent.org,2010:
+--- !AST
+has:
+- !Module
+  name: world
+  has:
+  - !Comment
+    type: doc
+    val: "This is World class :)\n"
+  - !Comment
+    type: blank
+    val: "\n"
+  - !Class
+    name: World
+    has:
+    - !Method
+      name: greet
+      type: void
+      args: []
+      has:
+      - !Println
+        args:
+        - !String
+          val: 'Hello, world'
+----
+== How C'Dent works (Step 2)
+
+* Define some syntax to parse into this tree...
+* ... and you are DONE!!
+
++* C'Dent doesn't define a syntax...
++* It defines 4!!
++* Python, Ruby, Perl and Javacript
+
+----
+== C'Dent is Alive
+
+* C'Dent is a compiler.
+* Get it here: http://pypi.python.org/pypi/cdent/
+
+    pip install cdent
+
+or:
+
+    easy_install cdent
+
+or
+
+    git clone git://github.com/ingydotnet/cdent.git
+
++       >>> Show C'Dent compiler in action <<<
+
+----
+== Who is C'Dent?
+
+* C'Dent was named after my friend, Chris Dent
+* aka cdent
+* I bought cdent.org in February 2007
+* I am addicted to domain names and projects
+
+* C'Dent also means:
+
+      Common'DEnomiNaTor
+
+* It finds the common, useful subset
+
+----
+== C'Dent is Statically Typed!!
+
+* OSDC Langs are dynamically, and often weakly, typed
+* AST needs exact types to generate code
+* Simple example:
+
+   if str == 'foo' or num == 42:
+   if ($str eq 'foo' or $num == 42) {
+
+* C'Dent scans the AST and assigns a type to every object
+* If it can't find the type or finds a mismatch...
+  ... it's a *compile-time* error.
+
+* At runtime there is no extra type checking
+
+----
+== How C'Dent compilation works (Overview)
+
+* Parse - Source to AST
+
+* Analyze - Detect and Validate types
+
+    ( .cd AST form )
+
+* Emit - Create language specific modules
+
+----
+== C'Dent implementation
+
+* C'Dent is currently a Python implementation
+
+* I chose Python because it has the best YAML support
+  * I can use TAGs properly!
+
+* Python is also a pretty good language
+* And something fun and new for Ingy!
+
+----
+== C'Dent implementation
+
+* C'Dent has **NO** dependency on Python!
+
+    OR ANY OTHER LANGUAGE
+
+* C'Dent uses very Acmeist code
+  * reParse
+* Can be switched to a new language at any time
+* I personally want to use Haskell...
+
+* Will C'Dent be self-hosted???
+
+----
+== The C'Dent Parser Grammars
+
+C'Dent uses a grammar that is a Python class generated from
+preprocessed YAML files that contain Regexp based rules.
+
+Let's take a looksy...
+
+    * ../cdent/
+    * ../cdent/cdent/parser/
+    * ../cdent/cdent/parser/python/grammar.py
+    * ../cdent/src
+
++* New Acmeist module called "reParse"
+* Similar to Damian's Regexp::Grammars
+* I want to turn Damian into an Acmeist!!!
+----
+== Error Handling
+
+* Demo a current parse error
+* Type errors are detected after parsing
+  * AST contains line number info
+----
+
+== C'Dent Vocabulary
+
+* Every language uses the same terminology. :-)
++* They just give the terms different meanings!!!  :-(
+
+* Package == Library, Module, Distribution, Gem
+* Module == Module (sorry Ruby!) 
+  * Includeable container/file
+* Class == Class, OO definition
+* Method == Function, Subroutine
+* Statement == For, While, If, Assignment
+* Variable == Property, Slot
+
+----
+== C'Dent Design Goals
+
+* Find a usable OO subset
+* Reuse when possible
+  * Runtime when not possible
+* Make Foo.cd.* modules actually work.
+* Make Foo.* modules nice to read.
+* Don't use more runtime than you need.
+
+----
+== C'Dent API Wrappers
+
+* C'Dent modules can only use/require/import C'Dent
+* So JSYNC can't use JSON.(pm|py|rb|java|go|pir) :-(
+* C'Dent needs to define a Wrapper API system
+* JSON::encode()
+* JSON::decode()
+
+----
+== C'Dent Comparisons
+
+People have compared C'Dent to things like:
+
+* Parrot (inside out)
+* SWIG
+* CORBA
+* Others??
+
+----
+== C - The Ultimate Backend
+
+* If C'Dent can compile to C
+* We get fast modules for free
+* Python -> C + SWIG -> Python
+* People will target C'Dent for easy speed
+* And Everyone (Ruby, Perl, etc) will WIN!
+
+----
+== C'Dent Lamda Runtime
+
+* In Taiwan, Au taught me the meaning of Lamda Camels
+* Any language that has closures can do full Lamda Calculus
+* Lamda Calculus can do all of OO
+* A full lamda runtime is one way to do C'Dent
+
+----
+== Packaging Acmeism...
+
+* C'Dent is not enough
+* You need at least 2 other things:
+  1) Portable tests
+  2) Portable documentation
+
++* Luckily I have projects for both!!
+
++* TestML - testml.org
+* Stardoc - stardoc.org
+
+----
+== TestML
+
+* What good are modules without tests?
+
+* What good are Portable modules without Portable tests?
+
+* TestML is an agnostic unit test language
+  * Implemented in every C'Dent target language
+
+* TDD meets Acmeism!
+
+  http://testml.org
+----
+== Introducing TestML
+
+* TestML is Acmeist data driven unit testing
+* Based on Test-Base (Perl & JavaScript)
+
+* Currently implemented in:
+  * Perl
+  * Python
+
+* Who wants to help me with Perl 6?
+----
+# Simple Example (3 Tests)
+
+%TestML: 1.0
+
+*mixed.uppercase() == *upper;
+*mixed.lowercase() == *lower;
+
+=== Test mixed case string
+--- mixed: I Like Pie
+--- upper: I LIKE PIE
+--- lower: i like pie
+
+=== Test lower case string
+--- mixed: I Love Lucy
+--- upper: I LOVE LUCY
+----
+# Example TestML for C'Dent
+
+%TestML: 1.0
+
+*cd_py.compile('rb') == *rb;
+*cd_py.compile('js') == *js;
+
+=== Hello, world
+--- cd_py
+class World:
+    def greet(self):
+        print "Hello, world\n",
+--- rb
+class World
+    def greet
+        puts("Hello, world\n")
+        return
+    end
+end
+--- js
+(this.World = function() {}).prototype = {
+    greet: function() {
+        print("Hello, world");
+    }
+};
+
+----
+== TestML Design Goals
+
+* TestML use portable coding
+* reParse to parse the language
+
+* TestML works with multiple test *frameworks*
+* Python == unittest, py.test, nose
+* Runner class for each framework
+
+* Language specific code goes in a Bridge class
+* Bridge classes may one day be C'Dent!
+
+----
+== Perl 5 and Perl 6
+
+* Rakudo is the new Perl 6 engine
+* Perl 6 is vastly different from Perl 5
+* All the good modules need to be rewritten
+* It would be great if they passed the same tests
+
+----
+== Hackathon & TestML
+
+* I want to hack on TestML tomorrow!
+* HELP ME!
+
+* TestML tests for C'Dent
+* TestML in your language
+
+----
+== Stardoc
+
+* What good are Portable modules without Portable documentation?
+
+* Foo.rst > Foo.pod > Foo.asc > Foo.wiki > Foo.html
+
+* >>> Wikiwyg <<<
+* Wikitext.pm
+
+* #stardoc and #*doc
+* http://stardoc.org
+
+----
+== StarDoc is like C'Dent for Doc
+
+* Define a common intermediate
+* Parse and Emit
+
+* POD
+* reStructuredText
+* Markdown
+* Asciidoc
+* RDoc
+* Wiki*
+* HTML
+
+----
+== YAPC::NA
+
+* YAPC is Next Week!
+
+* Let's Hack!
+----
+== Are you an Acmeist?
+
+* Will YOU share your IDEAS with EVERYONE???
+
+   if answer is True:
+       you is Acmeist
+
+== ...
+
+== Please Join Me!!!
+
+---- center
+The End
+
+Any Questions?
+
++Everything in this talk is on GitHub
+
+Including this Talk!!
+
+http://ingydotnet.github.com/acmeism-yapcna2010-talk/
