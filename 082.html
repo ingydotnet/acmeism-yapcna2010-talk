@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>082</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "081" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "083" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>
+
+
+
+
+                        C'Dent Lamda Runtime
+     
+     * In Taiwan, Au taught me the meaning of Lamda Camels
+     * Any language that has closures can do full Lamda Calculus
+     * Lamda Calculus can do all of OO
+     * A full lamda runtime is one way to do C'Dent
+
+
+
+
+
+
+
+</pre>
+</body>

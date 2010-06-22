@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>042</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "041" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "043" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>                        Simple Typed Mapping
+     
+     This would be loaded into a given programming language environment as an instance object of a Soldier class:
+         {
+             &quot;!&quot;: &quot;Soldier&quot;,
+             &quot;name&quot;: &quot;Benjamin&quot;,
+             &quot;rank&quot;: &quot;Private&quot;,
+             &quot;serial number&quot;: 123456789
+         }
+     
+     Equivalent YAML:
+         --- !Soldier
+         name: Benjamin
+         rank: Private
+         serial number: 123456789
+
+
+
+</pre>
+</body>

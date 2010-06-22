@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>079</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "078" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "080" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>
+
+
+
+                         C'Dent API Wrappers
+     
+     * C'Dent modules can only use/require/import C'Dent
+     * So JSYNC can't use JSON.(pm|py|rb|java|go|pir) :-(
+     * C'Dent needs to define a Wrapper API system
+     * JSON::encode()
+     * JSON::decode()
+
+
+
+
+
+
+
+</pre>
+</body>

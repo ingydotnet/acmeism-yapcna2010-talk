@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>043</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "042" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "044" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>                             A Reference
+     
+     He and she share the same car:
+         {
+             &quot;His car&quot;: {
+                 &quot;&amp;&quot;: &quot;001&quot;,
+                 &quot;make&quot;: &quot;Volvo&quot;,
+                 &quot;vin&quot;: &quot;918273645&quot;
+             },
+             &quot;Her car&quot;: &quot;*001&quot;
+         }
+     
+     YAML:
+         ---
+         His car: &amp;001
+           make: Volvo
+           vin: 918273645
+         Her car: *001
+</pre>
+</body>

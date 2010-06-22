@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>041</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "040" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "042" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>
+
+
+
+                     Why JSYNC will be Great!!!
+     
+     1. JSYNC is JSON.
+        * It starts with an enormous, stable code base for parsing and emitting.
+     2. JSYNC adds YAML (the good parts).
+        * It takes well defined typing and reference syntax, verbatim from the YAML spec.
+     3. JSYNC becomes a minimal, yet complete, data serialization language.
+        * Q.E.D.
+
+
+
+
+
+
+</pre>
+</body>

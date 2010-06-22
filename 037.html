@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>037</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "036" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "038" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>
+
+
+
+                       My Module Goal for 2010
+     
+     * I want to write a useful OO module
+     * With tests
+     * With docs
+     * Ported to 10 - 20 languages
+     * Uploaded to their CPAN
+
+
+
+
+
+
+
+</pre>
+</body>
